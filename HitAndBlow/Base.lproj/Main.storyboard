@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HitAndBlow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,100 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4桁の数字を入力して、隠された数字を当てよう！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX9-FW-dMf">
+                                <rect key="frame" x="16" y="97" width="343" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1234" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ela-G8-LPw">
+                                <rect key="frame" x="16" y="120" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="UjR-aL-utU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-gR-pP8">
+                                <rect key="frame" x="120" y="120" width="31" height="30"/>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="decideNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mfj-W2-XRk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnR-vR-xke">
+                                <rect key="frame" x="297" y="120" width="62" height="30"/>
+                                <state key="normal" title="リセット"/>
+                                <connections>
+                                    <action selector="resetDatas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Tm-wG-RDx"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="logs" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xSn-AO-Cmb">
+                                <rect key="frame" x="16" y="197" width="343" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hit And Blow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqI-zz-gmX">
+                                <rect key="frame" x="138" y="44" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入力履歴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmD-yg-O9G">
+                                <rect key="frame" x="16" y="174" width="50" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="rqI-zz-gmX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IWp-8g-zYs"/>
+                            <constraint firstItem="ela-G8-LPw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PLw-uS-e3i"/>
+                            <constraint firstItem="DmD-yg-O9G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SOg-BJ-Bqz"/>
+                            <constraint firstItem="qJx-gR-pP8" firstAttribute="leading" secondItem="ela-G8-LPw" secondAttribute="trailing" constant="24" id="Stb-bf-Gld"/>
+                            <constraint firstItem="AnR-vR-xke" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TQs-lb-DyW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LX9-FW-dMf" secondAttribute="trailing" id="UIl-n4-k0H"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xSn-AO-Cmb" secondAttribute="bottom" constant="16" id="Vbf-0t-dmL"/>
+                            <constraint firstItem="xSn-AO-Cmb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZVb-dk-N4x"/>
+                            <constraint firstItem="ela-G8-LPw" firstAttribute="top" secondItem="LX9-FW-dMf" secondAttribute="bottom" constant="8" id="dPo-Jz-PPm"/>
+                            <constraint firstItem="LX9-FW-dMf" firstAttribute="top" secondItem="rqI-zz-gmX" secondAttribute="bottom" constant="32" id="gCf-Mn-xPp"/>
+                            <constraint firstItem="rqI-zz-gmX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="hMo-9q-aMG"/>
+                            <constraint firstItem="LX9-FW-dMf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iQ6-5L-4RT"/>
+                            <constraint firstItem="xSn-AO-Cmb" firstAttribute="top" secondItem="DmD-yg-O9G" secondAttribute="bottom" constant="8" id="jWR-nO-vho"/>
+                            <constraint firstItem="AnR-vR-xke" firstAttribute="top" secondItem="LX9-FW-dMf" secondAttribute="bottom" constant="8" id="n4I-FX-m9g"/>
+                            <constraint firstItem="xSn-AO-Cmb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nbL-91-IMz"/>
+                            <constraint firstItem="qJx-gR-pP8" firstAttribute="top" secondItem="LX9-FW-dMf" secondAttribute="bottom" constant="8" id="rxA-Wz-kiF"/>
+                            <constraint firstItem="DmD-yg-O9G" firstAttribute="top" secondItem="ela-G8-LPw" secondAttribute="bottom" constant="24" id="y2X-cx-xVG"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4gX-Cu-qpL" appends="YES" id="cIC-UY-z1I"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="decideButton" destination="qJx-gR-pP8" id="Dgt-zX-FRb"/>
+                        <outlet property="historyText" destination="xSn-AO-Cmb" id="Qez-1v-JfH"/>
+                        <outlet property="numberText" destination="ela-G8-LPw" id="4z8-g3-G1o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4gX-Cu-qpL">
+                    <connections>
+                        <action selector="tapGeneral:" destination="BYZ-38-t0r" id="5Nn-PF-JFT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

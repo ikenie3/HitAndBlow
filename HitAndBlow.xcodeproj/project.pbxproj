@@ -14,6 +14,7 @@
 		A98CD4471F4AE3CE00847E76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98CD4451F4AE3CE00847E76 /* LaunchScreen.storyboard */; };
 		A98CD4521F4AE3CE00847E76 /* HitAndBlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD4511F4AE3CE00847E76 /* HitAndBlowTests.swift */; };
 		A98CD45D1F4AE3CE00847E76 /* HitAndBlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD45C1F4AE3CE00847E76 /* HitAndBlowUITests.swift */; };
+		A98CD46B1F4C301200847E76 /* HitAndBlowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD46A1F4C301200847E76 /* HitAndBlowData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A98CD4581F4AE3CE00847E76 /* HitAndBlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitAndBlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98CD45C1F4AE3CE00847E76 /* HitAndBlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndBlowUITests.swift; sourceTree = "<group>"; };
 		A98CD45E1F4AE3CE00847E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A98CD46A1F4C301200847E76 /* HitAndBlowData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitAndBlowData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A98CD4431F4AE3CE00847E76 /* Assets.xcassets */,
 				A98CD4451F4AE3CE00847E76 /* LaunchScreen.storyboard */,
 				A98CD4481F4AE3CE00847E76 /* Info.plist */,
+				A98CD46A1F4C301200847E76 /* HitAndBlowData.swift */,
 			);
 			path = HitAndBlow;
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 				TargetAttributes = {
 					A98CD4381F4AE3CE00847E76 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = M7GCZF3A76;
+						DevelopmentTeam = 3T7X73QFG9;
 						ProvisioningStyle = Automatic;
 					};
 					A98CD44C1F4AE3CE00847E76 = {
@@ -264,6 +267,7 @@
 			files = (
 				A98CD43F1F4AE3CE00847E76 /* ViewController.swift in Sources */,
 				A98CD43D1F4AE3CE00847E76 /* AppDelegate.swift in Sources */,
+				A98CD46B1F4C301200847E76 /* HitAndBlowData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M7GCZF3A76;
+				DEVELOPMENT_TEAM = 3T7X73QFG9;
 				INFOPLIST_FILE = HitAndBlow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.takemitsu.HitAndBlow;
@@ -428,7 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M7GCZF3A76;
+				DEVELOPMENT_TEAM = 3T7X73QFG9;
 				INFOPLIST_FILE = HitAndBlow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.takemitsu.HitAndBlow;
@@ -514,6 +518,7 @@
 				A98CD4631F4AE3CE00847E76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A98CD4641F4AE3CE00847E76 /* Build configuration list for PBXNativeTarget "HitAndBlowTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				A98CD4661F4AE3CE00847E76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A98CD4671F4AE3CE00847E76 /* Build configuration list for PBXNativeTarget "HitAndBlowUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				A98CD4691F4AE3CE00847E76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
