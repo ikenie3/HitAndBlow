@@ -23,7 +23,8 @@ class HbData {
     func initialize() {
         // 答えをセットする
         self.setNewCorrectAnswer()
-        answerHistory = []
+        self.answerHistory = []
+        self.answerCount = 0
     }
     
     // 答えをセット
