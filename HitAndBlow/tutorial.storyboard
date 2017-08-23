@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="J9m-tX-GcO">
+            <objects>
+                <pageViewController storyboardIdentifier="tutorialPageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="sqn-qn-u4g" customClass="TutorialPageViewController" customModule="HitAndBlow" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7U-TR-xL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="155"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="pwU-Db-NlI">
+            <objects>
+                <viewController storyboardIdentifier="1st" id="Sn6-Mr-9Ig" customClass="TutorialViewController" customModule="HitAndBlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5iK-2O-tfz"/>
+                        <viewControllerLayoutGuide type="bottom" id="RsU-8E-2E6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nbn-fH-J0l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecR-IB-jch">
+                                <rect key="frame" x="164.5" y="557" width="46" height="30"/>
+                                <state key="normal" title="閉じる"/>
+                                <connections>
+                                    <action selector="closeButton:" destination="Sn6-Mr-9Ig" eventType="touchUpInside" id="NEh-4j-zbq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgz-8Q-fPt">
+                                <rect key="frame" x="172" y="487" width="31" height="30"/>
+                                <state key="normal" title="次へ"/>
+                                <connections>
+                                    <action selector="move1stButton:" destination="Sn6-Mr-9Ig" eventType="touchUpInside" id="NN7-9A-KPU"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ヒットアンドブローとは" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PMq-sa-p8s">
+                                <rect key="frame" x="16" y="105" width="343" height="342"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="チュートリアル１" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5z-wO-CAl">
+                                <rect key="frame" x="16" y="44" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PMq-sa-p8s" firstAttribute="leading" secondItem="nbn-fH-J0l" secondAttribute="leading" constant="16" id="6qC-6v-1X9"/>
+                            <constraint firstAttribute="trailing" secondItem="PMq-sa-p8s" secondAttribute="trailing" constant="16" id="CWv-CJ-aC7"/>
+                            <constraint firstItem="M5z-wO-CAl" firstAttribute="leading" secondItem="nbn-fH-J0l" secondAttribute="leadingMargin" id="XDI-6E-OsX"/>
+                            <constraint firstItem="ecR-IB-jch" firstAttribute="top" secondItem="jgz-8Q-fPt" secondAttribute="bottom" constant="40" id="gmM-st-INs"/>
+                            <constraint firstItem="PMq-sa-p8s" firstAttribute="top" secondItem="M5z-wO-CAl" secondAttribute="bottom" constant="40" id="mGg-sw-mcB"/>
+                            <constraint firstItem="M5z-wO-CAl" firstAttribute="top" secondItem="5iK-2O-tfz" secondAttribute="bottom" constant="24" id="mOf-9d-29F"/>
+                            <constraint firstItem="jgz-8Q-fPt" firstAttribute="centerX" secondItem="nbn-fH-J0l" secondAttribute="centerX" id="pBq-pL-fzm"/>
+                            <constraint firstItem="jgz-8Q-fPt" firstAttribute="top" secondItem="PMq-sa-p8s" secondAttribute="bottom" constant="40" id="pWh-zH-Lbm"/>
+                            <constraint firstItem="RsU-8E-2E6" firstAttribute="top" secondItem="ecR-IB-jch" secondAttribute="bottom" constant="80" id="xnY-Jq-kWc"/>
+                            <constraint firstItem="ecR-IB-jch" firstAttribute="centerX" secondItem="nbn-fH-J0l" secondAttribute="centerX" id="xva-85-gbY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descText" destination="PMq-sa-p8s" id="Fbv-Hg-Afh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLf-8z-9Y2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528.79999999999995" y="153.37331334332833"/>
+        </scene>
+        <!--Tutorial 2nd View Controller-->
+        <scene sceneID="sRu-EU-CTc">
+            <objects>
+                <viewController storyboardIdentifier="2nd" id="H5O-Qc-MZs" customClass="Tutorial2ndViewController" customModule="HitAndBlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4vb-5R-jRl"/>
+                        <viewControllerLayoutGuide type="bottom" id="5eN-bc-pUp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N5k-Ek-bDt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="チュートリアル２" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdZ-nQ-O8G">
+                                <rect key="frame" x="16" y="44" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-eS-6uI">
+                                <rect key="frame" x="164.5" y="557" width="46" height="30"/>
+                                <state key="normal" title="閉じる"/>
+                                <connections>
+                                    <action selector="closeButton:" destination="H5O-Qc-MZs" eventType="touchUpInside" id="o90-QB-VrY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLu-9R-TlE">
+                                <rect key="frame" x="172" y="487" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="move1stButton:" destination="H5O-Qc-MZs" eventType="touchUpInside" id="aZq-8L-dT9"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ヒットアンドブローとは" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XQI-dW-lQq">
+                                <rect key="frame" x="32" y="105" width="343" height="342"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PdZ-nQ-O8G" firstAttribute="leading" secondItem="N5k-Ek-bDt" secondAttribute="leadingMargin" id="0sq-3i-nws"/>
+                            <constraint firstItem="XQI-dW-lQq" firstAttribute="top" secondItem="PdZ-nQ-O8G" secondAttribute="bottom" constant="40" id="6FY-P5-t0e"/>
+                            <constraint firstItem="XQI-dW-lQq" firstAttribute="trailing" secondItem="N5k-Ek-bDt" secondAttribute="trailingMargin" constant="16" id="6lw-yE-Nz1"/>
+                            <constraint firstItem="pLu-9R-TlE" firstAttribute="centerX" secondItem="N5k-Ek-bDt" secondAttribute="centerX" id="84m-KT-VeF"/>
+                            <constraint firstItem="gXE-eS-6uI" firstAttribute="top" secondItem="pLu-9R-TlE" secondAttribute="bottom" constant="40" id="Ad3-Qn-4j9"/>
+                            <constraint firstItem="gXE-eS-6uI" firstAttribute="centerX" secondItem="N5k-Ek-bDt" secondAttribute="centerX" id="HkA-G3-LLd"/>
+                            <constraint firstItem="PdZ-nQ-O8G" firstAttribute="top" secondItem="4vb-5R-jRl" secondAttribute="bottom" constant="24" id="IHf-St-LQ4"/>
+                            <constraint firstItem="pLu-9R-TlE" firstAttribute="top" secondItem="XQI-dW-lQq" secondAttribute="bottom" constant="40" id="b6n-cd-cu8"/>
+                            <constraint firstItem="XQI-dW-lQq" firstAttribute="leading" secondItem="N5k-Ek-bDt" secondAttribute="leadingMargin" constant="16" id="v5C-cq-0XN"/>
+                            <constraint firstItem="5eN-bc-pUp" firstAttribute="top" secondItem="gXE-eS-6uI" secondAttribute="bottom" constant="80" id="wJd-tp-cTD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descText" destination="XQI-dW-lQq" id="vyQ-MN-zxA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsS-Ml-0b9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="153"/>
+        </scene>
+    </scenes>
+</document>

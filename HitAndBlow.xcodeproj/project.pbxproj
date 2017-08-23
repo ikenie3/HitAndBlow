@@ -15,6 +15,10 @@
 		A98CD4521F4AE3CE00847E76 /* HitAndBlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD4511F4AE3CE00847E76 /* HitAndBlowTests.swift */; };
 		A98CD45D1F4AE3CE00847E76 /* HitAndBlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD45C1F4AE3CE00847E76 /* HitAndBlowUITests.swift */; };
 		A98CD46B1F4C301200847E76 /* HitAndBlowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD46A1F4C301200847E76 /* HitAndBlowData.swift */; };
+		A98CD46D1F4D688000847E76 /* tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98CD46C1F4D688000847E76 /* tutorial.storyboard */; };
+		A98CD46F1F4D697200847E76 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD46E1F4D697200847E76 /* TutorialPageViewController.swift */; };
+		A98CD4711F4D784400847E76 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD4701F4D784400847E76 /* TutorialViewController.swift */; };
+		A98CD4741F4D80B300847E76 /* Tutorial2ndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CD4731F4D80B300847E76 /* Tutorial2ndViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		A98CD45C1F4AE3CE00847E76 /* HitAndBlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndBlowUITests.swift; sourceTree = "<group>"; };
 		A98CD45E1F4AE3CE00847E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A98CD46A1F4C301200847E76 /* HitAndBlowData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitAndBlowData.swift; sourceTree = "<group>"; };
+		A98CD46C1F4D688000847E76 /* tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tutorial.storyboard; sourceTree = "<group>"; };
+		A98CD46E1F4D697200847E76 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		A98CD4701F4D784400847E76 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		A98CD4731F4D80B300847E76 /* Tutorial2ndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial2ndViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 				A98CD4451F4AE3CE00847E76 /* LaunchScreen.storyboard */,
 				A98CD4481F4AE3CE00847E76 /* Info.plist */,
 				A98CD46A1F4C301200847E76 /* HitAndBlowData.swift */,
+				A98CD4721F4D7F8400847E76 /* tutorial */,
 			);
 			path = HitAndBlow;
 			sourceTree = "<group>";
@@ -126,6 +135,17 @@
 				A98CD45E1F4AE3CE00847E76 /* Info.plist */,
 			);
 			path = HitAndBlowUITests;
+			sourceTree = "<group>";
+		};
+		A98CD4721F4D7F8400847E76 /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				A98CD46C1F4D688000847E76 /* tutorial.storyboard */,
+				A98CD46E1F4D697200847E76 /* TutorialPageViewController.swift */,
+				A98CD4701F4D784400847E76 /* TutorialViewController.swift */,
+				A98CD4731F4D80B300847E76 /* Tutorial2ndViewController.swift */,
+			);
+			name = tutorial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +260,7 @@
 			files = (
 				A98CD4471F4AE3CE00847E76 /* LaunchScreen.storyboard in Resources */,
 				A98CD4441F4AE3CE00847E76 /* Assets.xcassets in Resources */,
+				A98CD46D1F4D688000847E76 /* tutorial.storyboard in Resources */,
 				A98CD4421F4AE3CE00847E76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +288,10 @@
 			files = (
 				A98CD43F1F4AE3CE00847E76 /* ViewController.swift in Sources */,
 				A98CD43D1F4AE3CE00847E76 /* AppDelegate.swift in Sources */,
+				A98CD4711F4D784400847E76 /* TutorialViewController.swift in Sources */,
+				A98CD46F1F4D697200847E76 /* TutorialPageViewController.swift in Sources */,
 				A98CD46B1F4C301200847E76 /* HitAndBlowData.swift in Sources */,
+				A98CD4741F4D80B300847E76 /* Tutorial2ndViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

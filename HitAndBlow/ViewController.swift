@@ -37,6 +37,19 @@ class ViewController: UIViewController {
         
         // データ等を初期化
         self.initialize()
+        
+        // チュートリアルを表示する
+        let ud = UserDefaults.standard
+        var isShowTutorial:Bool = true
+        if let _ = ud.object(forKey: "showTutorial") {
+            if ud.bool(forKey: "showTutorial") {
+                isShowTutorial = false
+            }
+        }
+        if isShowTutorial {
+            ud.set(true, forKey: "showTutorial")
+            self.showTutorial()
+        }
     }
     
     /// データやフィールドを初期化
@@ -97,6 +110,19 @@ class ViewController: UIViewController {
         
         
     }
+    
+    /// チュートリアルを表示する
+    @IBAction func dispTutorial(_ sender: UIButton) {
+        self.showTutorial()
+    }
+    func showTutorial() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "tutorial", bundle: nil)
+        let tutorialView = storyboard.instantiateViewController(withIdentifier: "tutorialPageView") as! TutorialPageViewController
+        DispatchQueue.main.async {
+            self.present(tutorialView, animated: true, completion: nil)
+        }
+    }
+    
     
     /// 画面タップでキーボードを下げる
     @IBAction func tapGeneral(_ sender: UITapGestureRecognizer) {
