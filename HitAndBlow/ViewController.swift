@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         historyText.layer.cornerRadius = 5.0
         // 編集できないように
         historyText.isEditable = false
+        // 等倍フォントに
+        historyText.font = UIFont(name: "Courier", size: 16)
         
         // 入力値が変化した場合のイベント登録
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange), name: NSNotification.Name.UITextFieldTextDidChange, object: numberText)
