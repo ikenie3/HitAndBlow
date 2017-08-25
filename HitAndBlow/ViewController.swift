@@ -99,24 +99,22 @@ class ViewController: UIViewController {
         historyText.text = hbData.answerHistory.joined(separator: "\n")
     }
     
-    /// リセットボタン
-    @IBAction func resetDatas(_ sender: UIButton) {
-        // confirm
-        let alert = UIAlertController(title: "リセットしますか？", message: "OKをタップすると隠された数字や履歴などがリセットされます", preferredStyle: .alert)
+    // NewGame == リセットボタン
+    @IBAction func newGameButton(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "新しくゲームを開始しますか？", message: "OKをタップすると隠された数字や履歴などがリセットされます", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (res) in
             print(res)
             self.initialize()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
-        
     }
     
     /// チュートリアルを表示する
-    @IBAction func dispTutorial(_ sender: UIButton) {
+    @IBAction func dispTutorial(_ sender: UIBarButtonItem) {
         self.showTutorial()
     }
+    
     func showTutorial() {
         let storyboard: UIStoryboard = UIStoryboard(name: "tutorial", bundle: nil)
         let tutorialView = storyboard.instantiateViewController(withIdentifier: "tutorialPageView") as! TutorialPageViewController
