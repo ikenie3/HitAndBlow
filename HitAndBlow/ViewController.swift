@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberText: UITextField!
     @IBOutlet weak var decideButton: UIButton!
     @IBOutlet weak var historyText: UITextView!
-    
+    let doneButton = UIBarButtonItem(title: "決定", style: .plain, target: self, action: #selector(decideNumberRun))
     
     var hbData:HbData = HbData()
     
@@ -52,6 +52,24 @@ class ViewController: UIViewController {
             ud.set(true, forKey: "showTutorial")
             self.showTutorial()
         }
+        
+        // キーボードにツールバーを追加する
+        let kbToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+        kbToolBar.barStyle = .default
+        kbToolBar.sizeToFit()
+        // スペーサー
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let clearButton = UIBarButtonItem(title: "クリア", style: .plain, target: self, action: #selector(clearNumberText))
+        self.doneButton.isEnabled = false
+        kbToolBar.items = [clearButton, spacer, self.doneButton]
+        numberText.inputAccessoryView = kbToolBar
+        
+        // キーボード表示する
+        numberText.becomeFirstResponder()
+    }
+    
+    func clearNumberText() {
+        self.numberText.text = ""
     }
     
     /// データやフィールドを初期化
@@ -59,6 +77,7 @@ class ViewController: UIViewController {
         hbData.initialize()
         numberText.text = ""
         decideButton.isEnabled = false
+        doneButton.isEnabled = false
         historyText.text = hbData.answerHistory.joined(separator: "\n")
         self.view.endEditing(true)
     }
@@ -73,29 +92,51 @@ class ViewController: UIViewController {
             }
             if text.characters.count >= 4 {
                 decideButton.isEnabled = true
+                doneButton.isEnabled = true
             }
             else {
                 decideButton.isEnabled = false
+                doneButton.isEnabled = false
             }
         }
         else {
             decideButton.isEnabled = false
+            doneButton.isEnabled = false
         }
     }
     
     /// 決定ボタン押下
     @IBAction func decideNumber(_ sender: UIButton) {
-        self.view.endEditing(true)
+        self.decideNumberRun()
+    }
+    func decideNumberRun() {
+        // 簡単にバリデーション
+        var errorMessage:String?
+        if let text = numberText.text {
+            if text.characters.count != 4 {
+                errorMessage = "４桁の数字を入力してください"
+            }
+        } else {
+            errorMessage = "４桁の数字を入力してください"
+        }
+        if errorMessage != nil {
+            let alert = UIAlertController(title: "エラー", message: errorMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         
         // 判定
         if hbData.isWin(ans: numberText.text!) {
+            self.view.endEditing(true)
             let alert = UIAlertController(title: "正解！", message: "\(hbData.answerCount)回目で正解しました", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
             numberText.text = ""
-            decideButton.isEnabled = false
         }
+        decideButton.isEnabled = false
+        doneButton.isEnabled = false
         historyText.text = hbData.answerHistory.joined(separator: "\n")
     }
     
