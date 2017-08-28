@@ -31,9 +31,6 @@ class ViewController: UIViewController {
         // 等倍フォントに
         historyText.font = UIFont(name: "Courier", size: 16)
         
-        // 入力値が変化した場合のイベント登録
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange), name: NSNotification.Name.UITextFieldTextDidChange, object: numberText)
-        
         // ボタンは初期では無効
         decideButton.isEnabled = false
         
@@ -63,9 +60,30 @@ class ViewController: UIViewController {
         self.doneButton.isEnabled = false
         kbToolBar.items = [clearButton, spacer, self.doneButton]
         numberText.inputAccessoryView = kbToolBar
-        
-        // キーボード表示する
-        numberText.becomeFirstResponder()
+    }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // 入力値が変化した場合のイベント登録
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange),
+                                               name: .UITextFieldTextDidChange,
+                                               object: numberText)
+
+        if numberText.canBecomeFirstResponder {
+            // キーボード表示する
+            numberText.becomeFirstResponder()
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // 入力値が変化した場合のイベント登録解除
+        NotificationCenter.default.removeObserver(self,
+                                                  name: .UITextFieldTextDidChange,
+                                                  object: nil)
     }
     
     func clearNumberText() {
